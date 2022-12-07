@@ -51,9 +51,16 @@
     scroll-margin-top: 100px;
   }
 
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+  .carrito {
+    display: none;
+  }
   .navbar-list {
     position: absolute;
-    top: 110px;
+    top: 100px;
     left: 5%;
     right: 5%;
     width: 90%;
@@ -64,7 +71,7 @@
     border-radius: 0px 0px 15px 15px;
     align-items: flex-start;
     padding: 45px 30px;
-    gap: 25px;
+    gap: 15px;
     z-index: 2;
     display: none;
   }
@@ -72,25 +79,27 @@
   .navbar-list a {
     font-size: 18px;
   }
-
+  .cart-label,
   .menu-label {
     display: flex;
     order: 2;
     cursor: pointer;
   }
-
+  .cart-label img,
   .menu-label img {
     height: 30px;
     width: 35px;
   }
-  .carrito p,
   .usuario p {
     display: flex;
   }
+
   #menu-toggle:checked + .navbar-list {
     display: flex;
   }
-
+  #cart-toggle:checked + .navbar-list {
+    display: flex;
+  }
   #hero {
     display: flex;
     flex-direction: column;
@@ -132,7 +141,6 @@
   }
 
   .home,
-  .carrito p,
   .usuario p {
     color: #ffa100;
   }
@@ -141,11 +149,31 @@
   .usuario {
     gap: 20px;
   }
+  .overlay {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+  }
+
+  #cart-toggle:checked ~ .overlay {
+    display: block;
+  }
+
+  #menu-toggle:checked ~ .overlay {
+    display: block;
+  }
 }
 
 @media (max-width: 645px) {
   .navbar-list {
-    position: absolute;
     top: 90px;
   }
   .logo {
@@ -174,6 +202,9 @@
   #hero img {
     width: 350px;
     height: 205px;
+  }
+  .overlay {
+    top: 90px;
   }
 }
 
@@ -204,7 +235,6 @@
 }
 @media (max-width: 432px) {
   .navbar-list {
-    position: absolute;
     top: 80px;
   }
   .logo {
@@ -233,6 +263,9 @@
   #hero img {
     width: 300px;
     height: 180px;
+  }
+  .overlay {
+    top: 80px;
   }
 }
 
