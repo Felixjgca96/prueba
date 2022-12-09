@@ -50,55 +50,46 @@
   section[id] {
     scroll-margin-top: 100px;
   }
-
+  .user-icon {
+    height: 30px;
+    width: 25px;
+  }
+  .cart-icon {
+    height: 36px;
+    width: 38px;
+  }
+  .home {
+    display: none;
+  }
+  .home-flex {
+    display: flex;
+    background: linear-gradient(98.81deg, #ffa200d4 -0.82%, #fb103bd5 101.53%);
+    border-radius: 5px;
+    padding: 2px;
+    color: #ffffff;
+    font-weight: 700;
+  }
   .navbar {
     display: flex;
     gap: 20px;
   }
-  .carrito {
-    display: none;
-  }
   .navbar-list {
-    position: absolute;
-    top: 100px;
-    left: 5%;
-    right: 5%;
-    width: 90%;
-    flex-direction: column;
-    background-color: #131415;
-    border: 2px solid #ffa100;
-    border-top: 0px;
-    border-radius: 0px 0px 15px 15px;
-    align-items: flex-start;
-    padding: 45px 30px;
-    gap: 15px;
-    z-index: 2;
-    display: none;
+    gap: 30px;
   }
-
   .navbar-list a {
     font-size: 18px;
   }
-  .cart-label,
-  .menu-label {
-    display: flex;
-    order: 2;
-    cursor: pointer;
-  }
-  .cart-label img,
-  .menu-label img {
-    height: 30px;
-    width: 35px;
-  }
-  .usuario p {
-    display: flex;
+  .user img,
+  .carrito img {
+    height: 36px;
+    width: 38px;
+    background-color: #131415;
   }
 
-  #menu-toggle:checked + .navbar-list {
-    display: flex;
-  }
-  #cart-toggle:checked + .navbar-list {
-    display: flex;
+  .usuario img {
+    height: 30px;
+    width: 25px;
+    background-color: #131415;
   }
   #hero {
     display: flex;
@@ -139,43 +130,17 @@
     height: 265px;
     margin-top: 20px;
   }
-
-  .home,
-  .usuario p {
-    color: #ffa100;
-  }
-
-  .home,
-  .usuario {
-    gap: 20px;
-  }
-  .overlay {
-    position: absolute;
-    top: 100px;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    display: none;
-  }
-
-  #cart-toggle:checked ~ .overlay {
-    display: block;
-  }
-
-  #menu-toggle:checked ~ .overlay {
-    display: block;
-  }
 }
 
 @media (max-width: 645px) {
+  .user,
+  .cart {
+    top: 100px;
+  }
   .navbar-list {
     top: 90px;
   }
+
   .logo {
     width: 60px;
     height: 63px;
@@ -202,9 +167,6 @@
   #hero img {
     width: 350px;
     height: 205px;
-  }
-  .overlay {
-    top: 90px;
   }
 }
 
@@ -234,6 +196,30 @@
   }
 }
 @media (max-width: 432px) {
+  .user,
+  .cart {
+    left: 0;
+    width: 100%;
+    border: none;
+    top: 80px;
+  }
+
+  .overlay {
+    display: none;
+  }
+  .user-item {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-item {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .navbar-list {
     top: 80px;
   }
@@ -263,9 +249,6 @@
   #hero img {
     width: 300px;
     height: 180px;
-  }
-  .overlay {
-    top: 80px;
   }
 }
 

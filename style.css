@@ -52,7 +52,6 @@ header {
 }
 
 .home,
-.carrito,
 .usuario {
   display: flex;
   justify-content: center;
@@ -68,11 +67,18 @@ header {
   width: 19px;
   background-color: #131415;
 }
-
-.carrito img {
-  height: 26px;
-  width: 28px;
+.home-flex {
+  gap: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
+  color: #ffa100;
+  font-weight: 400;
+  font-size: 22px;
   background-color: #131415;
+  text-decoration: none;
+  display: none;
 }
 
 .usuario img {
@@ -81,8 +87,12 @@ header {
   background-color: #131415;
 }
 
-.usuario p {
-  display: none;
+.navbar-izq {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  list-style-type: none;
 }
 
 .navbar-list {
@@ -95,6 +105,18 @@ header {
 
 .navbar-list li a {
   text-decoration: none;
+  background-color: #131415;
+}
+.user-icon {
+  cursor: pointer;
+  height: 20px;
+  width: 15px;
+  background-color: #131415;
+}
+.cart-icon {
+  cursor: pointer;
+  height: 26px;
+  width: 28px;
   background-color: #131415;
 }
 main {
@@ -159,9 +181,177 @@ main {
   background: var(--primary);
 }
 
-#menu-toggle,
-.menu-label,
 #cart-toggle,
-.cart-label {
+#user-toggle {
   display: none;
+}
+.user {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 20px 30px;
+  background: linear-gradient(98.81deg, #fb103d -0.82%, #ffa100 101.53%);
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(auto - 65px);
+  overflow-y: scroll;
+  display: none;
+  z-index: 2;
+}
+
+.cart {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  padding: 20px 30px;
+  background: linear-gradient(98.81deg, #fb103d -0.82%, #ffa100 101.53%);
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: calc(90vh - 65px);
+  overflow-y: scroll;
+  display: none;
+  z-index: 2;
+}
+
+.user::-webkit-scrollbar,
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.user h2,
+.cart h2 {
+  color: var(--text-white);
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.user-item,
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid var(--electric);
+  border-radius: 10px;
+}
+.user-item img,
+.cart-item img {
+  height: 65px;
+  width: 65px;
+  border-radius: 10px;
+}
+
+.item-infouser,
+.item-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item_titleuser,
+.item-title {
+  font-weight: 600;
+  font-size: 14px;
+}
+.item-biduser,
+.item-bid {
+  font-weight: 300;
+  font-size: 12px;
+}
+.item-priceuser,
+.item-price {
+  background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 16px;
+  font-weight: 800;
+}
+.item-handleruser,
+.item-handler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.quantity-handleruser,
+.quantity-handler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  font-weight: 400;
+  border-radius: 5px;
+}
+
+.upuser,
+.up {
+  border: 1px solid var(--electric);
+}
+.downuser,
+.down {
+  background-color: var(--secondary);
+  border: 1px solid var(--electric);
+}
+.divideruser,
+.divider {
+  border: 0.5px solid #131415;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.user-total,
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 10px;
+  padding: 10px;
+}
+.user-total p,
+.cart-total p {
+  color: var(--text-white);
+  font-weight: 700;
+}
+.user-total span,
+.cart-total span {
+  color: var(--text-gray);
+  font-weight: 400;
+  font-size: 18px;
+}
+.user-total h3,
+.cart-total h3 {
+  background: linear-gradient(98.81deg, #ffa100 -0.82%, #fb103d 101.53%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.btn-adduser,
+.btn-add {
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#user-toggle:checked + .user,
+#cart-toggle:checked + .cart {
+  display: flex;
+}
+#user-toggle:checked + .user,
+#cart-toggle:checked + .cart {
+  transform: translateX(0%);
+  transition: all 0.5s ease-in-out;
 }

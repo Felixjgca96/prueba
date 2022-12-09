@@ -7,43 +7,137 @@
     <title>Proyecto e5</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./mediaqueries.css" />
+    <link rel="stylesheet" href="./animaciones.css" />
   </head>
   <body>
     <header>
-      <img
-        src="./assets/img/nucbazappiicon 1.png"
-        alt="logopizza"
-        class="logo"
-      />
+      <nav class="navbar-izq">
+        <img
+          src="./assets/img/nucbazappiicon 1.png"
+          alt="logopizza"
+          class="logo"
+        />
+        <a class="home-flex" href="#hero">Home</a>
+      </nav>
+
       <nav class="navbar">
-        <label for="cart-toggle" class="cart-label">
-          <img src="./assets/img/Icon Cart.png" alt="" />
-        </label>
-        <input id="cart-toggle" type="checkbox" />
-        <label for="menu-toggle" class="menu-label">
-          <img src="./assets/img/menu.png" alt="" />
-        </label>
-        <input id="menu-toggle" type="checkbox" />
         <ul class="navbar-list">
           <li>
             <a class="home" href="#hero"
               ><img src="./assets/img/Home.png" alt="iconohome" />Home</a
             >
           </li>
-          <li>
-            <a class="cart carrito" href="#"
-              ><img src="./assets/img/Icon Cart.png" alt="carrito" />
-            </a>
-          </li>
+          <label for="cart-toggle" class="cart-label">
+            <img
+              src="./assets/img/Icon Cart.png"
+              alt="Carrito de compras"
+              class="cart-icon"
+            />
+          </label>
+          <input type="checkbox" id="cart-toggle" />
 
-          <li>
-            <a class="usuario" href="#"
-              ><img src="./assets/img/Icon Profile.png" alt="usuario" />
-              <p>User</p>
-            </a>
-          </li>
+          <div class="cart">
+            <h2>Tu Pedido</h2>
+            <div class="cart-item">
+              <img src="./assets/img/qjamone.png" alt="imgpizza1" />
+              <div class="item-info">
+                <h3 class="item-title">¡Q!Jamone!</h3>
+                <p class="item-bid">Precio</p>
+                <span class="item-price">350 $</span>
+              </div>
+              <div class="item-handler">
+                <span class="quantity-handler down">-</span>
+                <span class="item-quantity">2</span>
+                <span class="quantity-handler up">+</span>
+              </div>
+            </div>
+            <div class="cart-item">
+              <img src="./assets/img/lamaradona.png" alt="imgpizza2" />
+              <div class="item-info">
+                <h3 class="item-title">La Maradona</h3>
+                <p class="item-bid">Precio</p>
+                <span class="item-price">450 $</span>
+              </div>
+              <div class="item-handler">
+                <span class="quantity-handler down">-</span>
+                <span class="item-quantity">2</span>
+                <span class="quantity-handler up">+</span>
+              </div>
+            </div>
+
+            <div class="cart-item">
+              <img src="./assets/img/leomessi.png" alt="imgpizza3" />
+              <div class="item-info">
+                <h3 class="item-title">Leo Messi</h3>
+                <p class="item-bid">Precio</p>
+                <span class="item-price">10 $</span>
+              </div>
+              <div class="item-handler">
+                <span class="quantity-handler down">-</span>
+                <span class="item-quantity">1</span>
+                <span class="quantity-handler up">+</span>
+              </div>
+            </div>
+            <div class="cart-item">
+              <img src="./assets/img/nickgi.png" alt="imgpizza4" />
+              <div class="item-info">
+                <h3 class="item-title">Nick Gi</h3>
+                <p class="item-bid">Precio</p>
+                <span class="item-price">Gratis $</span>
+              </div>
+              <div class="item-handler">
+                <span class="quantity-handler down">-</span>
+                <span class="item-quantity">2</span>
+                <span class="quantity-handler up">+</span>
+              </div>
+            </div>
+
+            <span class="divider"></span>
+
+            <div class="cart-total">
+              <p>Total:</p>
+              <h3>Productos (7)</h3>
+              <span>1.610 $</span>
+            </div>
+            <button class="btn-add">Comprar</button>
+          </div>
+
+          <label for="user-toggle" class="user-label">
+            <img
+              src="./assets/img/Icon Profile.png"
+              alt="Carrito de compras"
+              class="user-icon"
+            />
+          </label>
+          <input type="checkbox" id="user-toggle" />
+
+          <div class="user">
+            <h2>Usuario</h2>
+            <div class="user-item">
+              <div class="item-infouser">
+                <h3 class="item-titleuser">Nickname:</h3>
+              </div>
+              <div class="item-handleruser">
+                <span class="quantity-handler downuser">Coloque Nickname</span>
+              </div>
+            </div>
+            <div class="user-item">
+              <div class="item-infouser">
+                <h3 class="item-titleuser">Contraseña:</h3>
+              </div>
+              <div class="item-handleruser">
+                <span class="quantity-handler downuser"
+                  >Coloque Contraseña</span
+                >
+              </div>
+            </div>
+
+            <span class="divideruser"></span>
+
+            <button class="btn-adduser">Ingresar</button>
+          </div>
+          <div class="overlay"></div>
         </ul>
-        <div class="overlay"></div>
       </nav>
     </header>
     <main>

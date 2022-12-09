@@ -1,0 +1,98 @@
+html {
+  scroll-padding-top: 65px;
+  scroll-behavior: smooth;
+}
+
+.overlay {
+  position: absolute;
+  top: 93px;
+  left: 0;
+  height: 90vh;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+}
+#user-toggle:checked ~ .overlay,
+#cart-toggle:checked ~ .overlay {
+  display: block;
+}
+
+.navbar-list li {
+  position: relative;
+  padding: 0;
+}
+.navbar-list li a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--text-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease;
+}
+.quantity-handleruser,
+.quantity-handler {
+  transition: all 0.2s ease-in;
+}
+.quantity-handleruser:hover,
+.quantity-handler:hover {
+  cursor: pointer;
+  background-color: var(--electric);
+  transition: all 0.2s ease-out;
+}
+.btn-adduser,
+.btn-add {
+  transition: all 0.2s ease-out;
+}
+.btn-adduser:hover,
+.btn-add:hover {
+  transition: all 0.2s ease-in;
+  background-color: var(--fire);
+}
+.btn-loaduser,
+.btn-load {
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+}
+.btn-loaduser:hover,
+.btn-load:hover {
+  transition: all 0.2s ease-in;
+  background-color: var(--electric);
+  color: black;
+}
+
+/*ANIMACIONES */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
