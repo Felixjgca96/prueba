@@ -194,6 +194,32 @@
     width: 300px;
     height: 180px;
   }
+  .footer {
+    gap: 1px;
+  }
+  .footer__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .footer__nav__link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .footer__text {
+    font-size: 14px;
+    font-weight: 200;
+    padding-top: 20px;
+  }
+
+  .footer__text--strong {
+    font-weight: 600;
+  }
 }
 @media (max-width: 432px) {
   .user,
