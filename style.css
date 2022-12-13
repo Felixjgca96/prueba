@@ -27,6 +27,10 @@
   font-family: "montserrat";
   color: #ffffff;
 }
+
+section[id] {
+  scroll-margin-top: 65px;
+}
 body {
   display: flex;
   justify-content: center;
@@ -121,6 +125,7 @@ header {
 }
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -301,6 +306,9 @@ main {
 .down {
   background-color: var(--secondary);
   border: 1px solid var(--electric);
+  padding: 3px;
+  font-weight: 600;
+  font-size: 14px;
 }
 .divideruser,
 .divider {
@@ -344,6 +352,11 @@ main {
   cursor: pointer;
   font-size: 20px;
   font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #131415;
 }
 
 #user-toggle:checked + .user,
@@ -354,4 +367,36 @@ main {
 #cart-toggle:checked + .cart {
   transform: translateX(0%);
   transition: all 0.5s ease-in-out;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.footer__nav {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.footer__nav__link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.footer__text {
+  padding-top: 40px;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.footer__text--strong {
+  font-weight: 900;
 }
