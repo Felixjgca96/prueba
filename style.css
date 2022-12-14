@@ -29,7 +29,7 @@
 }
 
 section[id] {
-  scroll-margin-top: 65px;
+  scroll-margin-top: 100px;
 }
 body {
   display: flex;
@@ -192,7 +192,7 @@ main {
 }
 .user {
   position: absolute;
-  top: 100px;
+  top: 93px;
   right: 0;
   padding: 20px 30px;
   background: linear-gradient(98.81deg, #fb103d -0.82%, #ffa100 101.53%);
@@ -209,7 +209,7 @@ main {
 
 .cart {
   position: absolute;
-  top: 100px;
+  top: 93px;
   right: 0;
   padding: 20px 30px;
   background: linear-gradient(98.81deg, #fb103d -0.82%, #ffa100 101.53%);
@@ -262,7 +262,7 @@ main {
   align-items: center;
 }
 
-.item_titleuser,
+.item-titleuser,
 .item-title {
   font-weight: 600;
   font-size: 14px;
@@ -367,6 +367,71 @@ main {
 #cart-toggle:checked + .cart {
   transform: translateX(0%);
   transition: all 0.5s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 93px;
+  left: 0;
+  height: 90vh;
+  width: 100%;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: none;
+}
+#user-toggle:checked ~ .overlay,
+#cart-toggle:checked ~ .overlay {
+  display: block;
+}
+
+.navbar-list li {
+  position: relative;
+  padding: 0;
+}
+.navbar-list li a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--text-white);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease;
+}
+.quantity-handleruser,
+.quantity-handler {
+  transition: all 0.2s ease-in;
+}
+.quantity-handleruser:hover,
+.quantity-handler:hover {
+  cursor: pointer;
+  background-color: var(--electric);
+  transition: all 0.2s ease-out;
+}
+.btn-adduser,
+.btn-add {
+  transition: all 0.2s ease-out;
+}
+.btn-adduser:hover,
+.btn-add:hover {
+  transition: all 0.2s ease-in;
+  background-color: var(--fire);
+}
+.btn-loaduser,
+.btn-load {
+  transition: all 0.2s ease-out;
+  font-weight: 600;
+}
+.btn-loaduser:hover,
+.btn-load:hover {
+  transition: all 0.2s ease-in;
+  background-color: var(--electric);
+  color: black;
 }
 
 .footer {
