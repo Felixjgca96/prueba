@@ -306,7 +306,6 @@ main {
 .down {
   background-color: var(--secondary);
   border: 1px solid var(--electric);
-  padding: 3px;
   font-weight: 600;
   font-size: 14px;
 }
